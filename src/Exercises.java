@@ -63,11 +63,14 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
+        boolean isAtLastNode = false;
+
         if (head != null) {
-            while (head.data != toAdd) {
+            while (!isAtLastNode) {
                 if (head.next != null) {
                     head = head.next;
                 } else {
+                    isAtLastNode = true;
                     head.next = new ListNode(toAdd);
                     head = head.next;
                 }
